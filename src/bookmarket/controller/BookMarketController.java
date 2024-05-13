@@ -2,9 +2,9 @@ package bookmarket.controller;
 
 import bookmarket.model.BookStorage;
 import bookmarket.model.Cart;
-import bookmarket.view.ConsoleView;
-import bookmarket.user.User;
 import bookmarket.model.admin;
+import bookmarket.user.User;
+import bookmarket.view.ConsoleView;
 
 public class BookMarketController {
     ConsoleView view;
@@ -71,7 +71,7 @@ public class BookMarketController {
         } else if (inputUsername.equals(adminUsername) && inputPassword.equals(adminPassword)) {
             // 어드민으로 로그인한 경우
             Admin admin = new Admin(adminUsername, adminPassword);
-            adminMenu(admin);
+            adminMenu(null);
         } else {
             view.showMessage("잘못된 사용자 이름 또는 비밀번호입니다.");
         }
