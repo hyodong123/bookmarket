@@ -7,6 +7,7 @@ public class CartItem {
 	
 	public CartItem(Book book) {
 		this.book = book;
+		this.bookId = book.getBookId();
 		this.quantity = 1;
 	}
 	
@@ -30,7 +31,11 @@ public class CartItem {
 
 	@Override
 	public String toString() {
-		return book.getBookId() + ", " + book.getTitle() + ", " + quantity + "권";
+		return book.getBookId() + ", " + book.getTitle() + ", " + quantity + "권, " + getPrice() + "원";
+	}
+
+	public int getPrice() {
+		return quantity * book.getPrice();
 	}
 	
 	
